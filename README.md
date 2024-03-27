@@ -2,8 +2,6 @@
 
 The blog is now hosted via [Bear](https://bearblog.dev/) for its simplicity and ease of use.
 
-TODO: upgrade to premium to point to fjorn.dev
-
 ## Writing a new blog post
 
 TODO: setup script to create new markdown file in `blogs/` with frontmatter filled out. Specifically have `make_discoverable: false` to turn off the toast upvote thing.
