@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
 
+
 :root {
   --width: 720px;
   --font-main: 'Roboto Mono', monospace;
@@ -67,8 +68,76 @@ a {
 
 a:hover {
   background-color: var(--main-color);
-  color: white;
+  color: var(--background-color);
   text-decoration: none;
+}
+
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  text-decoration: none;
+  border-bottom: none;
+}
+
+h1 a:hover,
+h2 a:hover,
+h3 a:hover,
+h4 a:hover,
+h5 a:hover,
+h6 a:hover {
+  border-bottom: 3px solid var(--main-color);
+}
+
+h2 a:before {
+  content: "#";
+  color: var(--main-color);
+  padding-right: 0.5em;
+}
+
+h3 a:before {
+  content: "##";
+  color: var(--main-color);
+  padding-right: 0.5em;
+}
+
+h4 a:before {
+  content: "###";
+  color: var(--main-color);
+  padding-right: 0.5em;
+}
+
+h5 a:before {
+  content: "####";
+  color: var(--main-color);
+  padding-right: 0.5em;
+}
+
+h2 a:hover:before {
+  content: "#";
+  color: var(--background-color);
+  padding-right: 0.5em;
+}
+
+h3 a:hover:before {
+  content: "##";
+  color: var(--background-color);
+  padding-right: 0.5em;
+}
+
+h4 a:hover:before {
+  content: "###";
+  color: var(---background-color);
+  padding-right: 0.5em;
+}
+
+h5 a:hover:before {
+  content: "####";
+  color: var(--background-color);
+  padding-right: 0.5em;
 }
 
 header {
@@ -111,10 +180,10 @@ img {
 
 code {
   font-family: monospace;
-  padding: 2px;
+  padding: 3px;
   background-color: var(--code-background-color);
   color: var(--code-color);
-  border-radius: 3px;
+  border-radius: 5px;
 }
 
 blockquote {
@@ -183,9 +252,11 @@ main h1 {
   margin-bottom: 0;
 }
 
+/*
 .post a {
   color: var(--text-color);
 }
+*/
 
 .inline {
   width: auto !important;
@@ -247,6 +318,7 @@ button {
 
 /* Toast button */
 .upvote-button {
+  margin-top: 40px;
   color: var(--text-color);
   font-family: var(--font-main);
   align-items: center;
@@ -265,7 +337,7 @@ button {
 .upvote-button::before {
   content: '🌿';
   display: block;
-  font-size: 32px;
+  font-size: 1rem;
   grid-area: emoji;
   margin-left: 4px;
 }
