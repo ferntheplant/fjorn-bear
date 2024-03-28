@@ -19,6 +19,124 @@
   --blockquote-color: #222;
 }
 
+.gg-file-document {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  transform: scale(var(--ggs, 1));
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-right: 0;
+  border-top: 0;
+  box-shadow: 0 0 0 2px;
+  border-radius: 1px;
+  border-top-right-radius: 4px;
+  overflow: hidden;
+  color: var(--main-color);
+}
+
+.gg-file-document::after,
+.gg-file-document::before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute
+}
+
+.gg-file-document::before {
+  background: currentColor;
+  box-shadow:
+    0 4px 0,
+    -6px -4px 0;
+  left: 0;
+  width: 10px;
+  height: 2px;
+  top: 8px
+}
+
+.gg-file-document::after {
+  width: 6px;
+  height: 6px;
+  border-left: 2px solid;
+  border-bottom: 2px solid;
+  right: -1px;
+  top: -1px
+}
+
+.gg-readme {
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+  transform: scale(var(--ggs, 1));
+  width: 2px;
+  height: 17px;
+  border-bottom: 4px solid;
+  border-radius: 4px;
+  color: var(--main-color);
+  left: 8px;
+}
+
+.gg-readme::after,
+.gg-readme::before {
+  content: "";
+  display: block;
+  position: absolute;
+  box-sizing: border-box;
+  width: 8px;
+  height: 12px;
+  box-shadow: 0 0 0 2px;
+  border-radius: 1px;
+  bottom: -1px;
+  background:
+    linear-gradient(to left,
+      currentColor 4px, transparent 0) no-repeat center 5px/4px 2px,
+    linear-gradient(to left,
+      currentColor 4px, transparent 0) no-repeat center 2px/4px 2px,
+    linear-gradient(to left,
+      currentColor 4px, transparent 0) no-repeat center 8px/4px 2px
+}
+
+.gg-readme::before {
+  border-top-right-radius: 3px;
+  left: -8px
+}
+
+.gg-readme::after {
+  border-top-left-radius: 3px;
+  right: -8px
+}
+
+.gg-youtube {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  transform: scale(var(--ggs, 1));
+  width: 16px;
+  height: 10px;
+  box-shadow: 0 0 0 2px;
+  border-radius:
+    15px 15px 15px 15px / 45px 45px 45px 45px;
+  color: var(--main-color);
+  left: 1px;
+  top: 2px;
+}
+
+.gg-youtube::before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  left: 7px;
+  top: 2px;
+  border-left: 4px solid currentColor;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent
+}
+
+
+/* ---------------------------------------------------------------------- */
+
 pre {
   background-color: var(--code-block-background-color);
   color: var(--code-block-color);
@@ -200,17 +318,31 @@ footer {
   text-align: center;
 }
 
-nav a[href="/blog/"] {
+nav a.active {
   border-bottom: 6px solid var(--main-color);
 }
 
-.home nav a[href="/"] {
-  border-bottom: 6px solid var(--main-color);
+/*
+nav a[href="/blog/"] {
+  	border-bottom: 6px solid var(--main-color);
+}
+
+nav a[href="/good/"] {
+  	border-bottom: 6px solid var(--main-color);
 }
 
 .home nav a[href="/blog/"] {
-  border-bottom: 3px solid var(--main-color);
+	border-bottom: 3px solid var(--main-color);
 }
+
+.home nav a[href="/"] {
+	border-bottom: 6px solid var(--main-color);
+}
+
+.home nav a[href="/good/"] {
+	border-bottom: 3px solid var(--main-color);
+}
+*/
 
 nav p {
   margin-top: 0
@@ -252,11 +384,31 @@ main h1 {
   margin-bottom: 0;
 }
 
-/*
-.post a {
-  color: var(--text-color);
+
+.page ul {
+  list-style-type: none;
 }
-*/
+
+.page ul>li {
+  position: relative
+}
+
+.page ul>li+li {
+  margin-top: 1em;
+}
+
+.reading-list-icon {
+  left: calc(2em * -1);
+  position: absolute;
+  text-align: center;
+  width: 2em;
+  line-height: inherit;
+  top: 8px
+}
+
+.page p {
+  margin-top: 0;
+}
 
 .inline {
   width: auto !important;
