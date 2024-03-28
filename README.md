@@ -16,6 +16,36 @@ Use [markdown-toc](https://github.com/jonschlinkert/markdown-toc) to add a table
 2. Run `markdown-toc --append=$'\n<br></br>' -i blogs/<blog-link-name>`
 3. Add string "Table of contents" to top of blog and edit whitespace around TOC as needed
 
+## Adding to the Good list
+
+Simply add a new item to the Markdown list with the relevant icon and a time tag prepended.
+
+TODO: find a nicer way to do this via bear posts or some automation script
+
+```html
+<!-- publish date -->
+<i><time datetime="2024-03-27-04:00" /></i>
+<!--
+  - 4 for March - Nov (EDT)
+  - 5 for Nov - March (EST)
+  - must wrap in <i> so other <time> elements don't get the "opaque" style
+-->
+<!-- article icon -->
+<span class="reading-list-icon"><i class="gg-file-document"></i></span>
+
+<!-- book icon -->
+<span class="reading-list-icon"><i class="gg-readme"></i></span>
+
+<!-- youtube video icon -->
+<span class="reading-list-icon"><i class="gg-youtube"></i></span>
+```
+
+## Scripts
+
+Custom scripts can be included in the `Settings > Header and footer directives` section of the dashboard. Copy-paste the script tag in `header.html` to the text box.
+
+Custom scripting should be kept to an absolute minimum for basic styling needs.
+
 ## Styling
 
 Copy and paste the `theme.css` file into the styling theme on the [Bear Dashboard](https://bearblog.dev/dashboard/).
