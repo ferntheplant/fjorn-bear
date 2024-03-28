@@ -140,7 +140,7 @@ Wherever possible I like to use [Catppuccin](https://catppuccin.com/) themes to 
 Most stuff in my `.zshrc` is basic post-install setup for various tools directly pasted or `echo`-ed in from the tools' instructions. The main takeaways are:
 
 - Alias `l` to a nice `exa` command for a solid tree view of any directory
-  - Can easily override `--level=1` is the nesting is overwhelming
+  - Can easily override `--level=1` if the nesting is overwhelming
 - Adding `/home/fjorn/.local/bin` to my `$PATH` for easy access to custom scripts or binaries I build myself
 - The `leave-<tool>` pattern dumps any packages installed with `<tool>` into a plain text file with each package name delimited by spaces
   - To re-install these packages simply pipe the file contents into the `<tool>` install command
@@ -165,7 +165,7 @@ Pros:
 Cons:
 
 - No plugin system yet means you have to hack together scripts to do stuff you could get with nvim plugins
-- Saying "I use Helix btw" doesn't sound as cool as saying you use vim
+- Saying "I use Helix btw" doesn't sound as cool as saying I use vim
 - No up-to-date packages on `apt`, so I had to install via some random guy's PPA
 
 #### [Language Server Configuration](#language-server-configuration)
