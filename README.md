@@ -46,6 +46,12 @@ Custom scripts can be included in the `Settings > Header and footer directives` 
 
 Custom scripting should be kept to an absolute minimum for basic styling needs.
 
+### Current Scripting Uses
+
+- override the `/blog/` page to have custom `<p>` tag inserted before blog list
+- "active menu" nav selections
+- auto-format dates in `<time>` tags to make adding to "good" list more convenient
+
 ## Styling
 
 Copy and paste the `theme.css` file into the styling theme on the [Bear Dashboard](https://bearblog.dev/dashboard/).

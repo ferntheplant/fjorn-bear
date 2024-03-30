@@ -1,5 +1,33 @@
 <script>
+
+  // customize /blog page
+  document.addEventListener("DOMContentLoaded", function () {
+    if (window.location.pathname !== '/blog/') {
+      return
+    }
+    // Select the ul element with class "blog-posts"
+    var ulElement = document.querySelector("main ul.blog-posts");
+
+    // Create a new paragraph element
+    var paragraph = document.createElement("p");
+
+    var htmlContent = `You don&#39;t have to subscribe by <a href="/subscribe/">email</a> or <a href="/feed/">RSS</a>, but it&#39;d be a lot cooler if you did.<br></br>`
+
+    // Set HTML content of the paragraph
+    paragraph.innerHTML = htmlContent;
+
+    // Add inline CSS styling
+    paragraph.style.marginTop = "0";
+
+    if (ulElement) {
+      ulElement.parentNode.insertBefore(paragraph, ulElement);
+    } else {
+      console.error("The ul element with class 'blog-posts' within <main> was not found.");
+    }
+  });
+
   window.onload = function () {
+    // active selected page in nav
     var navLinks = document.querySelectorAll('nav a');
 
     var currentSlug = window.location.pathname;
@@ -11,6 +39,7 @@
       }
     });
 
+    // nicely formatted times in lists
     var timeTags = document.querySelectorAll('time');
 
     timeTags.forEach(function (timeTag) {
