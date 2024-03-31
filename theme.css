@@ -142,6 +142,18 @@ pre {
   color: var(--code-block-color);
 }
 
+
+pre::selection {
+  color: #FFFFFF;
+  background: #000000;
+}
+
+pre::-moz-selection {
+  color: #FFFFFF;
+  background: #000000;
+}
+
+
 body {
   font-family: var(--font-secondary);
   font-size: var(--font-scale);
@@ -322,28 +334,6 @@ nav a.active {
   border-bottom: 6px solid var(--main-color);
 }
 
-/*
-nav a[href="/blog/"] {
-  	border-bottom: 6px solid var(--main-color);
-}
-
-nav a[href="/good/"] {
-  	border-bottom: 6px solid var(--main-color);
-}
-
-.home nav a[href="/blog/"] {
-	border-bottom: 3px solid var(--main-color);
-}
-
-.home nav a[href="/"] {
-	border-bottom: 6px solid var(--main-color);
-}
-
-.home nav a[href="/good/"] {
-	border-bottom: 3px solid var(--main-color);
-}
-*/
-
 nav p {
   margin-top: 0
 }
@@ -459,6 +449,44 @@ td {
   padding: 6px 13px;
   border: 1px solid #dfe2e5;
   font-size: 1em;
+}
+
+.subscribe p {
+  margin-top: 0;
+}
+
+.subscribe input[type="submit"] {
+  margin-top: 10px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border-radius: 0;
+  border: 1px solid var(--main-color);
+  font-family: var(--font-secondary);
+  font-size: var(--font-scale);
+  font-weight: bold;
+}
+
+.subscribe input[type="submit"]:hover {
+  background-color: var(--main-color);
+  color: #000000;
+  cursor: pointer;
+}
+
+.subscribe input[type="email"] {
+  color: #000000;
+  border: 0;
+  font-family: var(--font-secondary);
+  font-size: var(--font-scale);
+}
+
+.subscribe input[type="email"]::selection {
+  color: #FFFFFF;
+  background: #000000;
+}
+
+.subscribe input[type="email"]::-moz-selection {
+  color: #FFFFFF;
+  background: #000000;
 }
 
 /* ---------------------------------------------------- */
