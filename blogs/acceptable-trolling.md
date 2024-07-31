@@ -12,7 +12,7 @@ There was a recent [post on r/VALORANT](https://www.reddit.com/r/VALORANT/commen
 
 ## It feels morally just
 
-Most people feel somewhere deep inside that trolling in this instance was not only justified but the morally right course of action. The sexist players needed to be "punished" by having their game ruined by the victim. But this logic can be applied to some unsavory cases. In League of Legends many traditional trolls legitimately argue that their teammates "don't deserve to win". Most players will have experienced a troll who sees a teammate die once and decide this teammate won't "earn" the win so they start "inting" the game to ensure the teammate's loss. This troll ruined the game to punish an apparent moral wrongdoing in their eyes. Is that ok?
+Most people feel somewhere deep inside that trolling in this instance was not only justified but the morally right course of action. The sexist players needed to be "punished" by having their game ruined by the victim. But this logic can be applied to some unsavory cases. In League of Legends many traditional trolls legitimately argue that their teammates "don't deserve to win". Most players will have experienced a troll who sees a teammate die once and decide this teammate won't "earn" the win, so they start "inting" the game to ensure the teammate's loss. This troll ruined the game to punish an apparent moral wrongdoing in their eyes. Is that ok?
 
 ## Violence begets violence
 

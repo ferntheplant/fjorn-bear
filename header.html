@@ -1,7 +1,6 @@
 <script>
-
-  // customize /blog page
-  document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("DOMContentLoaded", main);
+  function addSubscribeText() {
     if (window.location.pathname !== '/blog/') {
       return
     }
@@ -11,7 +10,7 @@
     // Create a new paragraph element
     var paragraph = document.createElement("p");
 
-    var htmlContent = `You don&#39;t have to subscribe by <a href="/subscribe/">email</a> or <a href="/feed/">RSS</a>, but it&#39;d be a lot cooler if you did.<br></br>`
+    var htmlContent = `You don&#39;t have to subscribe by <a href="/subscribe/">email</a> or <a href="/feed/">RSS</a>, but it&#39;d be a lot cooler if you did.`
 
     // Set HTML content of the paragraph
     paragraph.innerHTML = htmlContent;
@@ -24,20 +23,29 @@
     } else {
       console.error("The ul element with class 'blog-posts' within <main> was not found.");
     }
-  });
+  }
 
-  window.onload = function () {
+  function highlightNavAndSetTimes() {
     // active selected page in nav
     var navLinks = document.querySelectorAll('nav a');
 
     var currentSlug = window.location.pathname;
 
+    let setActive = false
+    let blogLink = null
     navLinks.forEach(function (link) {
       // Check if the href matches the current slug
       if (link.getAttribute('href') === currentSlug) {
         link.classList.add('active');
+        setActive = true
+      }
+      if (link.getAttribute('href') === '/blog/') {
+        blogLink = link
       }
     });
+    if (!setActive && blogLink) {
+      blogLink.classList.add('active')
+    }
 
     // nicely formatted times in lists
     var timeTags = document.querySelectorAll('time');
@@ -50,8 +58,23 @@
     });
 
     function formatDate(date) {
-      var options = {year: 'numeric', month: 'short', day: 'numeric'};
+      var options = { year: 'numeric', month: 'short', day: '2-digit' };
       return date.toLocaleDateString('en-US', options);
     }
   };
+  function clickableHeadings() {
+    var headings = document.querySelectorAll('h2, h3, h4, h5, h6');
+    headings.forEach((heading) => {
+      heading.addEventListener('click', () => {
+        let url = window.location.pathname;
+        url += `#${heading.getAttribute('id')}`
+        history.pushState({}, '', url)
+      })
+    })
+  }
+  function main() {
+    addSubscribeText()
+    highlightNavAndSetTimes()
+    clickableHeadings()
+  }
 </script>

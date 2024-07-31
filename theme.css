@@ -1,19 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap");
 
 :root {
   --width: 720px;
-  --font-main: 'Roboto Mono', monospace;
-  --font-secondary: 'Roboto Mono', monospace;
+  --font-main: "Roboto Mono", monospace;
+  --font-secondary: "Roboto Mono", monospace;
   --font-scale: 1em;
   --background-color: #262626;
-  --heading-color: #FFFFFF;
-  --text-color: #E5E5E5;
+  --heading-color: #ffffff;
+  --text-color: #e5e5e5;
   --link-color: #339af0;
   --visited-color: #232333;
-  --main-color: #FFA86A;
+  --main-color: #ffa86a;
   --code-background-color: rgba(234, 179, 8, 0.15);
-  --code-color: #FFFFFF;
+  --code-color: #ffffff;
   --code-block-background-color: #f2f2f2;
   --code-block-color: #222;
   --blockquote-color: #222;
@@ -41,18 +40,16 @@
   content: "";
   display: block;
   box-sizing: border-box;
-  position: absolute
+  position: absolute;
 }
 
 .gg-file-document::before {
   background: currentColor;
-  box-shadow:
-    0 4px 0,
-    -6px -4px 0;
+  box-shadow: 0 4px 0, -6px -4px 0;
   left: 0;
   width: 10px;
   height: 2px;
-  top: 8px
+  top: 8px;
 }
 
 .gg-file-document::after {
@@ -61,7 +58,7 @@
   border-left: 2px solid;
   border-bottom: 2px solid;
   right: -1px;
-  top: -1px
+  top: -1px;
 }
 
 .gg-readme {
@@ -88,23 +85,22 @@
   box-shadow: 0 0 0 2px;
   border-radius: 1px;
   bottom: -1px;
-  background:
-    linear-gradient(to left,
-      currentColor 4px, transparent 0) no-repeat center 5px/4px 2px,
-    linear-gradient(to left,
-      currentColor 4px, transparent 0) no-repeat center 2px/4px 2px,
-    linear-gradient(to left,
-      currentColor 4px, transparent 0) no-repeat center 8px/4px 2px
+  background: linear-gradient(to left, currentColor 4px, transparent 0)
+      no-repeat center 5px/4px 2px,
+    linear-gradient(to left, currentColor 4px, transparent 0) no-repeat center
+      2px/4px 2px,
+    linear-gradient(to left, currentColor 4px, transparent 0) no-repeat center
+      8px/4px 2px;
 }
 
 .gg-readme::before {
   border-top-right-radius: 3px;
-  left: -8px
+  left: -8px;
 }
 
 .gg-readme::after {
   border-top-left-radius: 3px;
-  right: -8px
+  right: -8px;
 }
 
 .gg-youtube {
@@ -115,8 +111,7 @@
   width: 16px;
   height: 10px;
   box-shadow: 0 0 0 2px;
-  border-radius:
-    15px 15px 15px 15px / 45px 45px 45px 45px;
+  border-radius: 15px 15px 15px 15px / 45px 45px 45px 45px;
   color: var(--main-color);
   left: 1px;
   top: 2px;
@@ -131,9 +126,40 @@
   top: 2px;
   border-left: 4px solid currentColor;
   border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent
+  border-bottom: 3px solid transparent;
 }
 
+.gg-code {
+  color: var(--main-color);
+  transform: scale(var(--ggs, 1));
+}
+
+.gg-code,
+.gg-code::after,
+.gg-code::before {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  width: 8px;
+  height: 20px;
+}
+
+.gg-code::after,
+.gg-code::before {
+  content: "";
+  position: absolute;
+  height: 8px;
+  border-left: 2px solid;
+  border-bottom: 2px solid;
+  transform: rotate(45deg) scaleY(1);
+  /*left: -4px;*/
+  top: 2px;
+}
+
+.gg-code::after {
+  transform: rotate(-45deg) scaleX(-1);
+  left: 8px;
+}
 
 /* ---------------------------------------------------------------------- */
 
@@ -142,17 +168,15 @@ pre {
   color: var(--code-block-color);
 }
 
-
 pre::selection {
-  color: #FFFFFF;
+  color: #ffffff;
   background: #000000;
 }
 
 pre::-moz-selection {
-  color: #FFFFFF;
+  color: #ffffff;
   background: #000000;
 }
-
 
 body {
   font-family: var(--font-secondary);
@@ -170,12 +194,12 @@ body {
 
 ::-moz-selection {
   color: #000000;
-  background: #FFFFFF;
+  background: #ffffff;
 }
 
 ::selection {
   color: #000000;
-  background: #FFFFFF;
+  background: #ffffff;
 }
 
 h1,
@@ -202,69 +226,71 @@ a:hover {
   text-decoration: none;
 }
 
-
-h1 a,
-h2 a,
-h3 a,
-h4 a,
-h5 a,
-h6 a {
+.post h2,
+h3,
+h4,
+h5,
+h6 {
   text-decoration: none;
   border-bottom: none;
+  display: table;
+  margin: 0px 0px 0px 0px;
+  text-align: left;
 }
 
-h1 a:hover,
-h2 a:hover,
-h3 a:hover,
-h4 a:hover,
-h5 a:hover,
-h6 a:hover {
-  border-bottom: 3px solid var(--main-color);
+.post h2:hover,
+h3:hover,
+h4:hover,
+h5:hover,
+h6:hover {
+  background-color: var(--main-color);
+  color: var(--background-color);
+  cursor: pointer;
 }
 
-h2 a:before {
+.post h2:before {
   content: "#";
   color: var(--main-color);
   padding-right: 0.5em;
 }
 
-h3 a:before {
+.post h3:before {
   content: "##";
   color: var(--main-color);
   padding-right: 0.5em;
 }
 
-h4 a:before {
+.post h4:before {
   content: "###";
   color: var(--main-color);
   padding-right: 0.5em;
 }
 
-h5 a:before {
+.post h5:before {
   content: "####";
   color: var(--main-color);
   padding-right: 0.5em;
 }
 
-h2 a:hover:before {
+.post h2:hover:before {
   content: "#";
   color: var(--background-color);
   padding-right: 0.5em;
 }
 
-h3 a:hover:before {
+.post h3:hover:before {
   content: "##";
   color: var(--background-color);
   padding-right: 0.5em;
 }
 
-h4 a:hover:before {
+.post h4:hover:before {
   content: "###";
   color: var(---background-color);
   padding-right: 0.5em;
 }
 
-h5 a:hover:before {
+.post h5:hover:before {
   content: "####";
   color: var(--background-color);
   padding-right: 0.5em;
@@ -335,7 +361,7 @@ nav a.active {
 }
 
 nav p {
-  margin-top: 0
+  margin-top: 0;
 }
 
 .home p {
@@ -374,16 +400,15 @@ main h1 {
   margin-bottom: 0;
 }
 
-
 .page ul {
   list-style-type: none;
 }
 
-.page ul>li {
-  position: relative
+.page ul > li {
+  position: relative;
 }
 
-.page ul>li+li {
+.page ul > li + li {
   margin-top: 1em;
 }
 
@@ -393,7 +418,7 @@ main h1 {
   text-align: center;
   width: 2em;
   line-height: inherit;
-  top: 8px
+  top: 8px;
 }
 
 .page p {
@@ -480,12 +505,12 @@ td {
 }
 
 .subscribe input[type="email"]::selection {
-  color: #FFFFFF;
+  color: #ffffff;
   background: #000000;
 }
 
 .subscribe input[type="email"]::-moz-selection {
-  color: #FFFFFF;
+  color: #ffffff;
   background: #000000;
 }
 
@@ -506,8 +531,8 @@ button {
   align-items: center;
   display: grid !important;
   grid-template-areas:
-    'emoji label'
-    'count ...';
+    "emoji label"
+    "count ...";
   flex-direction: column;
   gap: 0 4px;
 }
@@ -517,7 +542,7 @@ button {
 }
 
 .upvote-button::before {
-  content: '🌿';
+  content: "🌿";
   display: block;
   font-size: 1rem;
   grid-area: emoji;
@@ -525,11 +550,11 @@ button {
 }
 
 .upvote-button:hover::before {
-  content: '🌿';
+  content: "🌿";
 }
 
 .upvote-button.upvoted:hover::before {
-  content: '🤙';
+  content: "🤙";
 }
 
 .upvote-button::after {
@@ -539,12 +564,12 @@ button {
 
 .upvote-button:hover::after {
   color: var(--text-color);
-  content: 'Toast this post';
+  content: "Toast this post";
   display: block;
 }
 
 .upvote-button.upvoted:hover::after {
-  content: 'Toasted!';
+  content: "Toasted!";
   display: block;
 }
 

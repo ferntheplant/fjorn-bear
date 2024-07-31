@@ -2,7 +2,7 @@
 title: On Shame and Anxiety
 link: shame-and-anxiety
 published_date: 2023-06-28
-meta_description: What's the difference
+meta_description: What's the difference?
 make_discoverable: false
 ---
 
