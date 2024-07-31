@@ -456,7 +456,7 @@ ul.blog-posts li {
   margin-bottom: 10px;
 }
 
-i time {
+time.good {
   font-style: normal;
   opacity: 0.7;
 }
