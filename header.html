@@ -1,5 +1,6 @@
 <script>
   document.addEventListener("DOMContentLoaded", main);
+
   function addSubscribeText() {
     if (window.location.pathname !== '/blog/') {
       return
@@ -62,6 +63,7 @@
       return date.toLocaleDateString('en-US', options);
     }
   };
+
   function clickableHeadings() {
     var headings = document.querySelectorAll('h2, h3, h4, h5, h6');
     headings.forEach((heading) => {
@@ -72,9 +74,89 @@
       })
     })
   }
+
+  function detectColorScheme() {
+    var theme = "light";    //default to light
+
+    //local storage is used to override OS theme settings
+    if (localStorage.getItem("theme")) {
+      if (localStorage.getItem("theme") == "dark") {
+        var theme = "dark";
+      }
+    } else if (!window.matchMedia) {
+      //matchMedia method not supported
+      return false;
+    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      //OS theme setting detected as dark
+      var theme = "dark";
+    }
+
+    //dark theme preferred, set document with a `data-theme` attribute
+    if (theme == "dark") {
+      document.documentElement.setAttribute("data-theme", "dark");
+    }
+  }
+
+  //function that changes the theme, and sets a localStorage variable to track the theme between page loads
+  function switchTheme(e) {
+    const currentTheme = document.documentElement.getAttribute('data-theme')
+    if (currentTheme === 'light' || currentTheme === null) {
+      localStorage.setItem('theme', 'dark');
+      document.documentElement.setAttribute('data-theme', 'dark');
+    } else {
+      localStorage.setItem('theme', 'light');
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  }
+
+  function fromHTML(html, trim = true) {
+    // Process the HTML string.
+    html = trim ? html.trim() : html;
+    if (!html) return null;
+
+    // Then set up a new template element.
+    const template = document.createElement('template');
+    template.innerHTML = html;
+    const result = template.content.children;
+
+    // Then return either an HTMLElement or HTMLCollection,
+    // based on whether the input HTML had one or more roots.
+    if (result.length === 1) return result[0];
+    return result;
+  }
+
+  function addToggler() {
+    const html = `<div class="toggle">
+  <div class="sun-div">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" data-slot="icon"
+      class="sun-svg">
+      <path
+        d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.166a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.303a.75.75 0 0 0-1.061-1.06l-1.591 1.59a.75.75 0 0 0 1.06 1.061l1.591-1.59ZM6 12a.75.75 0 0 1-.75.75H3a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 6 12ZM6.697 7.757a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 0 0-1.061 1.06l1.59 1.591Z">
+      </path>
+    </svg>
+  </div>
+  <div class="moon-div">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" data-slot="icon"
+      class="moon-svg">
+      <path fill-rule="evenodd"
+        d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z"
+        clip-rule="evenodd">
+      </path>
+    </svg>
+  </div>
+</div>`
+    const div = fromHTML(html)
+    div.addEventListener('click', switchTheme)
+    const header = document.querySelector('header')
+    const lastChild = header.lastElementChild
+    header.insertBefore(div, lastChild)
+  }
+
   function main() {
     addSubscribeText()
     highlightNavAndSetTimes()
     clickableHeadings()
+    detectColorScheme()
+    addToggler()
   }
 </script>

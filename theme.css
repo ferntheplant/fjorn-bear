@@ -5,30 +5,52 @@
   --font-main: "Roboto Mono", monospace;
   --font-secondary: "Roboto Mono", monospace;
   --font-scale: 1em;
+  --link-color: #339af0;
+  --visited-color: #232333;
+  --blockquote-color: #222;
+  --main-color: #ffa86a;
+
+  --background-color: #fff8f0;
+  --heading-color: #000;
+  --text-color: #2c201a;
+  --code-background-color: #8e6a06;
+  --code-color: #fff;
+  --code-block-background-color: #222;
+  --code-block-color: #f2f2f2;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #262626;
+    --heading-color: #ffffff;
+    --text-color: #e5e5e5;
+    --code-background-color: rgba(240, 179, 10, 0.26);
+    --code-color: #fff;
+    --code-block-background-color: #f2f2f2;
+    --code-block-color: #222;
+  }
+}
+
+[data-theme="dark"] {
   --background-color: #262626;
   --heading-color: #ffffff;
   --text-color: #e5e5e5;
-  --link-color: #339af0;
-  --visited-color: #232333;
-  --main-color: #ffa86a;
   --code-background-color: rgba(240, 179, 10, 0.26);
   --code-color: #fff;
   --code-block-background-color: #f2f2f2;
   --code-block-color: #222;
-  --blockquote-color: #222;
-}
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --background-color: #fff8f0;
-    --heading-color: #000;
-    --text-color: #2c201a;
-    --link-color: #339af0;
-    --code-background-color: #8e6a06;
-    --code-color: #fff;
-    --code-block-background-color: #222;
-    --code-block-color: #f2f2f2;
-    --blockquote-color: #222;
+  .sun-div {
+    display: inline-flex;
+  }
+  .sun-svg {
+    color: #fff8f0;
+  }
+  .moon-div {
+    display: none;
+  }
+  .moon-svg {
+    color: white;
   }
 }
 
@@ -240,6 +262,69 @@ a:hover {
   text-decoration: none;
 }
 
+header {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding-bottom: 20px;
+  align-items: center;
+}
+
+.title:hover {
+  text-decoration: none;
+  background-color: var(--background-color);
+  border: none;
+}
+
+.title {
+  border: none;
+}
+
+.title h1 {
+  flex: 0.5 0;
+  margin-bottom: 0;
+}
+
+nav {
+  flex: 1 1 100%;
+}
+
+.toggle {
+  padding-top: 20px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: end;
+  white-space: nowrap;
+  margin-left: auto;
+  flex: 0 1;
+}
+
+.sun-div {
+  margin: -2px;
+  cursor: pointer;
+  user-select: none;
+  display: none;
+}
+
+.sun-svg {
+  height: 30px;
+  width: 30px;
+  color: black;
+}
+
+.moon-div {
+  margin: -2px;
+  cursor: pointer;
+  user-select: none;
+  display: inline-flex;
+}
+
+.moon-svg {
+  height: 27px;
+  width: 30px;
+  color: #262626;
+}
+
 a > code {
   padding-bottom: 1px;
 }
@@ -312,10 +397,6 @@ h6:hover {
   content: "####";
   color: var(--background-color);
   padding-right: 0.5em;
-}
-
-header {
-  padding-bottom: 20px;
 }
 
 nav a {
@@ -400,15 +481,6 @@ nav p {
   position: absolute;
   left: 0;
   content: "»";
-}
-
-.title:hover {
-  text-decoration: none;
-}
-
-.title h1 {
-  font-size: 2em;
-  margin-bottom: 0;
 }
 
 main h1 {
