@@ -4,6 +4,7 @@ link: acceptable-trolling
 published_date: 2023-06-16
 meta_description: Inting is not justice
 make_discoverable: false
+tags: thoughts
 ---
 
 ## Background

@@ -4,6 +4,7 @@ link: yet-another-dotfiles-repo
 published_date: 2024-25-03
 meta_description: Color me impressed /s
 make_discoverable: false
+tags: programming
 ---
 
 Table of contents

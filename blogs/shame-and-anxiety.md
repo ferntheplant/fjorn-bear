@@ -4,6 +4,7 @@ link: shame-and-anxiety
 published_date: 2023-06-28
 meta_description: What's the difference?
 make_discoverable: false
+tags: thoughts
 ---
 
 ## I'm a fuck

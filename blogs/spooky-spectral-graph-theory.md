@@ -4,6 +4,7 @@ link: spooky-spectral-graph-theory
 published_date: 2024-05-21T00:00:00.000Z
 meta_description: "boo \U0001F47B"
 make_discoverable: false
+tags: math
 ---
 Table of contents
 
