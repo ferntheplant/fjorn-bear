@@ -4,6 +4,7 @@ link: human-souls
 published_date: 2024-07-23
 meta_description: We are nobody
 make_discoverable: false
+tags: thoughts
 ---
 
 SOULS AND BEING HUMAN
