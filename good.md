@@ -9,6 +9,7 @@ make_discoverable: false
 
 I consume *a lot* of content on the internet. Not much of it is good. I'll try to add the good stuff to this list.
 
+- <span class="reading-list-icon"><i class="gg-file-document"></i></span><time datetime="2024-08-07T04:00"></time> [Vegetal](https://sophie006liu.github.io/vegetal/)
 - <span class="reading-list-icon"><i class="gg-code"></i></span><time datetime="2024-04-17T04:00"></time> [DreamBerd](https://github.com/TodePond/DreamBerd)
 - <span class="reading-list-icon"><i class="gg-file-document"></i></span><time datetime="2024-04-15T04:00"></time> [1/0 = 0](https://www.hillelwayne.com/post/divide-by-zero/)
 - <span class="reading-list-icon"><i class="gg-file-document"></i></span><time datetime="2024-04-06T04:00"></time> [Shit Yourself](https://heydonworks.com/article/shit-yourself/)
