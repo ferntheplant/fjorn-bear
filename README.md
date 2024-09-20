@@ -55,4 +55,4 @@ Custom scripting should be kept to an absolute minimum for basic styling needs.
 ## Styling
 
 Copy and paste the `theme.css` file into the styling theme on the [Bear Dashboard](https://bearblog.dev/dashboard/).
-TODO: restructure the CSS and commend it for future me
+TODO: restructure the CSS and comment it for future me

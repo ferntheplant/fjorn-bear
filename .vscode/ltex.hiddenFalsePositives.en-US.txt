@@ -12,3 +12,6 @@
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QIt is a well known result of the Spectral Theorem (oooo spooky 👻) that such matrices are diagonalizable, and their eigenvectors can form an orthonormal basis for the vector space over which they operate.\\E$"}
 {"rule":"CURRENCY","sentence":"^\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q$\\E$"}
 {"rule":"MISSING_COMMA_AFTER_INTRODUCTORY_PHRASE","sentence":"^\\QOf course it's a spectrum\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QI generally enjoy making computers go brrr\nEmo.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QMy aesthetic is r/fuckcars\nThriving.\\E$"}
+{"rule":"EN_SPECIFIC_CASE","sentence":"^\\QI, unfortunately, love league of legends\nUrbanite.\\E$"}
